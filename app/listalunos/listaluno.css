@@ -1,0 +1,145 @@
+/* ========================================================
+   ESTILOS DA PÁGINA DE LISTA DE ALUNOS (/listalunos)
+   ======================================================== */
+
+/* Centralização do layout da página */
+body:has(table) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título Lista de Alunos */
+body:has(table) > h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--sesi-blue-dark, #002B49);
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2.2rem;
+  position: relative;
+  padding-bottom: 0.9rem;
+  letter-spacing: -0.5px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+body:has(table) > h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sesi-red, #E30613), var(--sesi-red-light, #ff2d3b));
+  border-radius: 2px;
+}
+
+/* Tabela em formato de Card moderno */
+body:has(table) table,
+table {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 3.5rem auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-card, #ffffff);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg, 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--border-color, #e2e8f0);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Cabeçalho da Tabela */
+thead {
+  background: linear-gradient(135deg, var(--sesi-red, #E30613) 0%, var(--sesi-red-dark, #b8000b) 100%);
+  color: #ffffff;
+}
+
+th {
+  padding: 1.1rem 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-align: left;
+  border: none;
+}
+
+th:first-child {
+  text-align: center;
+  width: 70px;
+}
+
+/* Linhas do Corpo da Tabela */
+tbody tr {
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  transition: all 0.2s ease-in-out;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+tbody tr:hover {
+  background-color: var(--sesi-red-subtle, #fff1f2);
+  transform: scale(1.002);
+}
+
+/* Células */
+td {
+  padding: 1rem 1.4rem;
+  font-size: 0.95rem;
+  color: var(--text-main, #1f2937);
+  border-bottom: 1px solid #edf2f7;
+  vertical-align: middle;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Destaque para coluna de ID */
+td:first-child {
+  text-align: center;
+  font-weight: 700;
+  color: var(--sesi-red, #E30613);
+}
+
+/* Destaque para coluna de RA */
+td:last-child {
+  font-family: monospace;
+  font-weight: 600;
+  color: var(--sesi-blue-dark, #002B49);
+  background: rgba(0, 43, 73, 0.04);
+  border-radius: 6px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 650px) {
+  body:has(table) > h2 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  body:has(table) table,
+  table {
+    width: 95%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 0.8rem 1rem;
+    font-size: 0.88rem;
+  }
+}

@@ -1,0 +1,134 @@
+/* ========================================================
+   ESTILOS DA PÁGINA DE CADASTRO DE ALUNO (/cadaluno)
+   Aplicados especificamente aos elementos do formulário
+   ======================================================== */
+
+/* Centralização do conteúdo da página de cadastro */
+body:has(label[for="ra"]) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título Cadastro de Aluno */
+body:has(label[for="ra"]) > h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--sesi-blue-dark, #002B49);
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.9rem;
+  letter-spacing: -0.5px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+body:has(label[for="ra"]) > h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sesi-red, #E30613), var(--sesi-red-light, #ff2d3b));
+  border-radius: 2px;
+}
+
+/* Labels dos campos */
+body:has(label[for="ra"]) > label,
+label[for="nome"],
+label[for="idade"],
+label[for="serie"],
+label[for="ra"] {
+  display: block;
+  width: 90%;
+  max-width: 480px;
+  margin: 0 auto 0.4rem auto;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-main, #1f2937);
+  letter-spacing: 0.2px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Inputs do formulário */
+body:has(label[for="ra"]) > input,
+label[for="nome"] + input,
+label[for="idade"] + input,
+label[for="serie"] + input,
+label[for="ra"] + input {
+  display: block;
+  width: 90%;
+  max-width: 480px;
+  margin: 0 auto 1.3rem auto;
+  padding: 0.85rem 1.1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main, #1f2937);
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-color, #e2e8f0);
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  animation: fadeIn 0.4s ease-out;
+}
+
+body:has(label[for="ra"]) > input:focus,
+label[for="nome"] + input:focus,
+label[for="idade"] + input:focus,
+label[for="serie"] + input:focus,
+label[for="ra"] + input:focus {
+  border-color: var(--sesi-red, #E30613);
+  box-shadow: 0 0 0 3.5px rgba(227, 6, 19, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Botão Cadastrar */
+body:has(label[for="ra"]) > button {
+  display: block;
+  width: 90%;
+  max-width: 480px;
+  margin: 0.8rem auto 4rem auto;
+  padding: 1rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--sesi-red, #E30613) 0%, var(--sesi-red-dark, #b8000b) 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(227, 6, 19, 0.3);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+body:has(label[for="ra"]) > button:hover {
+  background: linear-gradient(135deg, var(--sesi-red-light, #ff2d3b) 0%, var(--sesi-red, #E30613) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(227, 6, 19, 0.45);
+}
+
+body:has(label[for="ra"]) > button:active {
+  transform: translateY(0);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  body:has(label[for="ra"]) > h2 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+  }
+  
+  body:has(label[for="ra"]) > label,
+  body:has(label[for="ra"]) > input,
+  body:has(label[for="ra"]) > button {
+    width: 92%;
+  }
+}
